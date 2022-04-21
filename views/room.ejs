@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat App</title>
+  <link rel="icon" href="https://i.pinimg.com/originals/ab/d2/60/abd260f6b99a24eed1e2e6309ce6efc5.png" type="image/gif" sizes="16x16">
+  <script>
+    const roomName = "<%= roomName %>"
+  </script>
+   <script src="/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      background-color:  #fffff2;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    #message-container {
+      width: 80%;
+      max-width: 1200px;
+    }
+
+    #message-container div {
+      background-color: #bfd9ff;
+      padding: 5px;
+    }
+
+    #message-container div:nth-child(2n) {
+      background-color: #f6d2ff;
+
+    }
+
+    #send-container {
+      position: fixed;
+      padding-bottom: 30px;
+      bottom: 0;
+      background-color: white;
+      max-width: 1200px;
+      width: 80%;
+      display: flex;
+    }
+
+    #message-input {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+  
+  <h2 class="uniq">Chat Room</h2>
+
+
+<div id="message-container" class="card">
+  <div class="card-body">Basic card</div>
+</div>
+
+  <form id="send-container">
+    
+    <input class="form-control"  type="text" id="message-input">
+
+    <button type="submit" id="send-button" class="btn btn-default">Send</button>
+  </form>
+
+</body>
+</html>

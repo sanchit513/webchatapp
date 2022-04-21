@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chat App</title>
+    <link rel="icon" href="https://i.pinimg.com/originals/ab/d2/60/abd260f6b99a24eed1e2e6309ce6efc5.png" type="image/gif" sizes="16x16">
+  <script src="/socket.io/socket.io.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+  <img class="im" src="https://img.icons8.com/ios/452/naruto-sign.png">
+<h2> ChatNow</h2>
+  
+
+  <form action="/room" method="POST">
+    <div class="form-group">
+      <label for="email">Room Name</label>
+      <input class="form-control" id="email" placeholder="Enter name of the room " name="room" type="text" required>
+    </div>
+    <button type="submit" class="btn btn-default">Create</button>
+  </form>
+
+
+</div>
+
+<div class="container">
+  <h2>The rooms</h2>
+<div class ="poi"> 
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Chat Room </th>
+        <th>Join</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+<div id="room-container">
+  <% Object.keys(rooms).forEach(room=> { %>
+      <tr class="success">
+    
+            <div>
+            <td>
+                <%= room %>
+              </td>
+            </div>
+          <td> <a href="/<%= room %>">Join</a></td>
+</tr>
+<% }) %>
+</div>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+</div>
+
+<style type="text/css">
+  body {
+    background:  whitesmoke !important;
+  }
+  .container{
+    background:  white !important;
+  }
+  .poi{
+    background-color: #ffe6ff;
+  }
+  .im{
+    height: 80px;
+  width: 10%;
+  }
+ </style>
+
+</body>
+</html>
